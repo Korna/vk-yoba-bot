@@ -3,11 +3,11 @@ define("public_token", "75a7b8ba");
 define("important_message", "хуй саси");
 define("internal_token", "114e33c45cde37797d6c87c2d0bb653e9dd507e9287065a77c958d546823e7738d0e4eac0d8b8491c8bb5");
 
-function send_message_to_user($userId, $text)
+function send_message_to_user($peer_id, $text)
 {
     $request_params = array(
         'message' => $text,
-        'peer_id' => $userId,
+        'peer_id' => $peer_id,
         'access_token' => internal_token,
         'v' => '5.87'
     );
