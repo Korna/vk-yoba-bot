@@ -1,8 +1,6 @@
 <?php
-
 $public_token = "75a7b8ba";
-
-//echo $public_token;
+$important_message = "хуй саси";
 
 function vk_msg_send($peer_id, $text)
 {
@@ -20,24 +18,26 @@ function vk_msg_send($peer_id, $text)
 }
 
 $data = json_decode(file_get_contents('php://input'));
+
 switch ($data->type) {
     case 'confirmation':
         echo $public_token;
         break;
 
     case 'message_new':
-        $message_text = $data->object->text;
+        $message_text = strtolower($data->object->text);
         $chat_id = $data->object->peer_id;
+
         if ($message_text == "привет") {
             vk_msg_send($chat_id, "Привет.");
         }
         if ($message_text == "пока") {
             vk_msg_send($chat_id, "Пока.");
         }
+        if ($message_text == "шош" || $message_text == "борь" || $message_text == "тимч") {
+            vk_msg_send($chat_id, $important_message);
+        }
+
         echo 'ok';
         break;
 }
-
-$chat_id = 1000;
-
-vk_msg_send($chat_id, "TUPA TEXT");
