@@ -34,7 +34,7 @@ switch ($data->type) {
         if ($message_text == "пока") {
             vk_msg_send($chat_id, "Пока.");
         }
-        if ($message_text == "шош" || $message_text == "борь" || $message_text == "тимч") {
+        if ($message_text == "шош" || $message_text == "борь" || $message_text == "тимч" || $message_text == "чом") {
             vk_msg_send($chat_id, $important_message);
         }
 
