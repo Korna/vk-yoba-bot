@@ -1,5 +1,5 @@
 <?php
 
-$output = "TEST";
+$public_token = "75a7b8ba";
 
-echo "('" . $output."')";
+echo $public_token;
