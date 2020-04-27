@@ -1,6 +1,5 @@
 <?php
 define("public_token", "75a7b8ba");
-define("important_message", "хуй саси");
 define("internal_token", "114e33c45cde37797d6c87c2d0bb653e9dd507e9287065a77c958d546823e7738d0e4eac0d8b8491c8bb5");
 
 function send_message_to_user($peer_id, $text)
@@ -34,8 +33,8 @@ function process_user_message($data)
             if ($message_text == "пока") {
                 send_message_to_user($chat_id, "Пока.");
             }
-            if ($message_text == "шош" || $message_text == "борь" || $message_text == "тимч" || $message_text == "чом") {
-                send_message_to_user($chat_id, important_message);
+            if ($message_text == "как дела?") {
+                send_message_to_user($chat_id, "Нормально, я же бот. А твои?");
             }
 
             echo 'ok';
